@@ -1,0 +1,76 @@
+import java.util.stream.Collectors
+
+//plugins {
+//    id 'java'
+//    id 'org.springframework.boot' version '2.7.0'
+//    id 'io.spring.dependency-management' version '1.1.3'
+//}
+//
+//group = 'com.crazypug'
+//version = '0.0.1-SNAPSHOT'
+//
+//java {
+//    sourceCompatibility = JavaVersion.VERSION_1_8
+//}
+//
+//configurations {
+//    compileOnly {
+//        extendsFrom annotationProcessor
+//    }
+//}
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+//dependencies {
+//    implementation 'org.springframework.boot:spring-boot-starter'
+//    compileOnly 'org.projectlombok:lombok'
+//    annotationProcessor 'org.projectlombok:lombok'
+//    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//}
+//
+//tasks.named('test') {
+//    useJUnitPlatform()
+//}
+
+buildscript {
+
+
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:1.1.4"
+    }
+
+    repositories {
+
+
+        mavenCentral()
+
+        maven {
+            url "https://plugins.gradle.org/m2/"
+
+            allowInsecureProtocol true
+        }
+    }
+}
+
+
+subprojects {
+    apply plugin: "java"
+    repositories {
+        mavenCentral()
+    }
+    group = 'com.crazypug'
+
+
+    println(project.plugins.findAll().stream().map { it.toString() }
+            .collect(Collectors.joining(",")))
+    dependencies {
+        testImplementation 'junit:junit:4.12'
+        implementation 'org.slf4j:slf4j-api:1.7.36'
+        annotationProcessor 'org.projectlombok:lombok:1.18.22'
+        testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
+        compileOnly 'org.projectlombok:lombok:1.18.22'
+    }
+    version = PROJECT_VERSION
+}
