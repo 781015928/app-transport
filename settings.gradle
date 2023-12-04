@@ -1,1 +1,1 @@
-include ':download-com.crazypug.download.message-transport'
+include ':download-message-transport'
