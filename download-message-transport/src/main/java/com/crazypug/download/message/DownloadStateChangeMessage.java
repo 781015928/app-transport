@@ -21,7 +21,7 @@ public class DownloadStateChangeMessage {
 
     private List<File> files;
 
-    public static final int DOWNLOAD_ED = 0,
+    public static final int
             DOWNLOAD_ING = 1,
             DOWNLOAD_SUCCESS = 2;
 
