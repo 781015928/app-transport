@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Map;
 
 @Data
 @Builder
@@ -14,19 +15,13 @@ import java.util.List;
 @AllArgsConstructor
 public class TransCodeStateChangeMessage {
 
+    public static final int WAIT = 0, ING = 1, SUCCESS = 2, FAIL = -3;
 
-    private List<File> files;
+    private String taskId;
 
-    @Data
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class File {
-        private String fileId;
-        private String fileName;
-        private String parentName;
+    private String outPutPath;
 
-    }
+    private Map<String, Object> callBackParams;
 
 
 }

@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Map;
 
 @Data
 @Builder
@@ -14,19 +15,14 @@ import java.util.List;
 @AllArgsConstructor
 public class CreateTransCodeMessage {
 
+    public static final String TOPIC = "topic-create-transcode";
 
-    private List<File> files;
 
-    @Data
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class File {
-        private String fileId;
-        private String fileName;
-        private String parentName;
-
-    }
+    private Integer deleteInputFile;
+    private List<String> inputPath;
+    private String outPutPath;
+    private String callBackTopic;
+    private Map<String, Object> callBackParams;
 
 
 }
