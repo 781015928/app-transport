@@ -18,6 +18,10 @@ public class DownloadStateChangeMessage {
 
     private List<File> files;
 
+    public static final int DOWNLOAD_ED = 0,
+            DOWNLOAD_ING = 1,
+            DOWNLOAD_SUCCESS = 2;
+
     @Data
     @Builder
     @NoArgsConstructor
