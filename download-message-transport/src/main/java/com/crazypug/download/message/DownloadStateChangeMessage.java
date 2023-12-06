@@ -14,6 +14,9 @@ import java.util.List;
 @AllArgsConstructor
 public class DownloadStateChangeMessage {
 
+
+
+
     private String yunParentName;
 
     private List<File> files;

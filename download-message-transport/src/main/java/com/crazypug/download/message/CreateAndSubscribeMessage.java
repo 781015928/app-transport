@@ -17,6 +17,8 @@ import java.util.List;
 @AllArgsConstructor
 public class CreateAndSubscribeMessage {
 
+    public static final String TOPIC="topic-create-and-subscribe";
+
     private String topic;
 
     private List<File> files;

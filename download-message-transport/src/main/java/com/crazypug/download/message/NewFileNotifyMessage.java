@@ -14,6 +14,8 @@ import java.util.List;
 @AllArgsConstructor
 public class NewFileNotifyMessage {
 
+    public static final String TOPIC= "topic-newfile-notify";
+
 
     private List<File> files;
 
