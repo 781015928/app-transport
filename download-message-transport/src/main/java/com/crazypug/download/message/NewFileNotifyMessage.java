@@ -24,6 +24,7 @@ public class NewFileNotifyMessage {
     public static class File {
         private String fileId;
         private String fileName;
+        private Long length;
         private String parentName;
 
     }
