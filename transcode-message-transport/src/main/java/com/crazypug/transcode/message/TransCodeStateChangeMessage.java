@@ -19,6 +19,7 @@ public class TransCodeStateChangeMessage {
 
     private String taskId;
 
+    private Integer status;
     private String outPutPath;
 
     private Map<String, Object> callBackParams;
